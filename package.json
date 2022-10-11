@@ -1,0 +1,33 @@
+{
+  "name": "as-shopify-functions-api",
+  "version": "0.0.0",
+  "description": "An AssemblyScript implementation of the Shopify Functions API",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gadget-inc/as-shopify-functions-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gadget-inc/as-shopify-functions-api/issues"
+  },
+  "homepage": "https://github.com/gadget-inc/as-shopify-functions-api#readme",
+  "devDependencies": {
+    "assemblyscript": "^0.21.6"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  }
+}
